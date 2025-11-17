@@ -14,7 +14,7 @@ This project includes:
 ✔ Logistic Regression model with class balancing  
 ✔ Flask backend API  
 ✔ Responsive modern frontend (HTML + CSS + JS)  
-✔ Glassmorphism UI + Emoji-based mood display  
+✔ Basic UI + Emoji-based mood display  
 ✔ Fully functional end-to-end web app  
 
 ---
@@ -36,5 +36,6 @@ This project includes:
 - Animated loading indicator
 - Mood-based emoji display
 - Works on desktop, tablet, and mobile
+
 
 ---
