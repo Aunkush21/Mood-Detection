@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Detection App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mood Detection from Text</h1>
+
+        <textarea id="textInput" placeholder="Type something..."></textarea>
+
+        <button onclick="predictMood()">Predict Mood</button>
+
+        <div id="loader" class="hidden"></div>
+        <div id="result" class="hidden mood-box"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
