@@ -35,7 +35,8 @@ This project includes:
 - Fully responsive frontend UI
 - Animated loading indicator
 - Mood-based emoji display
-- Works on desktop, tablet, and mobile
+- Works on all devices
 
 
 ---
+
