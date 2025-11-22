@@ -32,11 +32,11 @@ This project includes:
 ### 💻 Full-Stack Web App
 - Flask REST API endpoint: `/predict`
 - Secure CORS-enabled backend
-- Fully responsive frontend UI
-- Animated loading indicator
+- Fully responsive UI
 - Mood-based emoji display
 - Works on all devices
 
 
 ---
+
 
