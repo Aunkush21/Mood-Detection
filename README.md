@@ -36,8 +36,4 @@ This project includes:
 - Mood-based emoji display
 - Works on all devices
 
-
 ---
-
-
-
