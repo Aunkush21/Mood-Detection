@@ -29,7 +29,7 @@ This project includes:
 - 70%+ accuracy on test data
 - Clean model saving and loading using Joblib
 
-### 💻 Full-Stack Web App
+### 💻 Full-Stack Web Application
 - Flask REST API endpoint: `/predict`
 - Secure CORS-enabled backend
 - Fully responsive UI
