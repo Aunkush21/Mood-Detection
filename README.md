@@ -37,3 +37,4 @@ This project includes:
 - Works on all devices
 
 ---
+I will be working on this project more
