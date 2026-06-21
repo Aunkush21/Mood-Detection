@@ -1,24 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-mood="idle">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Detection App</title>
+    <title>MoodSense — AI Mood Detection</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="container">
-        <h1>Mood Detection from Text</h1>
-
-        <textarea id="textInput" placeholder="Type something..."></textarea>
-
-        <button onclick="predictMood()">Predict Mood</button>
-
-        <div id="loader" class="hidden"></div>
-        <div id="result" class="hidden mood-box"></div>
+    <!-- Mood-reactive ambient background -->
+    <div class="aurora" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
     </div>
+
+    <main class="stage">
+        <header class="brand">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a9 9 0 1 0 9 9"></path>
+                    <path d="M9 10h.01M15 10h.01"></path>
+                    <path d="M9 15c.8.7 1.9 1 3 1s2.2-.3 3-1"></path>
+                    <path d="M16 3l1.5 3L21 7.5 17.5 9 16 12l-1.5-3L11 7.5 14.5 6 16 3z"></path>
+                </svg>
+            </span>
+            <span class="brand-name">MoodSense</span>
+        </header>
+
+        <section class="hero">
+            <h1>What's the feeling<br>behind your words?</h1>
+            <p class="subtitle">Type anything and the AI reads its emotional tone in real time.</p>
+        </section>
+
+        <section class="composer" aria-label="Mood analyzer">
+            <label for="textInput" class="sr-only">Text to analyze</label>
+            <textarea id="textInput" rows="4"
+                placeholder="e.g. I just got the best news of my entire year…"></textarea>
+            <div class="composer-footer">
+                <span class="hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> to analyze</span>
+                <button id="analyzeBtn" type="button" onclick="predictMood()">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="btn-label">Analyze mood</span>
+                    <span class="btn-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                </button>
+            </div>
+        </section>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+            <div class="orb"><span id="moodEmoji" class="orb-face"></span></div>
+            <h2 id="moodLabel" class="mood-label"></h2>
+            <p id="moodCaption" class="mood-caption"></p>
+        </section>
+
+        <p id="errorMsg" class="error" role="alert" hidden></p>
+    </main>
 
     <script src="script.js"></script>
 </body>

@@ -1,8 +1,16 @@
-flask==3.0.0
-flask-cors==4.0.0
-scikit-learn==1.7.2
-numpy==1.26.4
-pandas==2.2.0
-joblib==1.3.2
-datasets==2.17.1
+# Core runtime — Flask API + scikit-learn inference
+flask>=3.0
+flask-cors>=4.0
+scikit-learn>=1.4
+numpy>=1.26
+joblib>=1.3
 
+# Dataset access (required for training either model)
+datasets>=2.17
+
+# Transformer path — fine-tuning + DistilBERT inference (optional but recommended)
+# For a GPU, install the CUDA build of torch separately first, e.g.:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+torch>=2.2
+transformers>=4.40
+accelerate>=0.30

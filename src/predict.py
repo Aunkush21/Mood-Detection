@@ -1,23 +1,23 @@
-import joblib
-import os
-import sys
+"""CLI mood predictor:  python src/predict.py "your text here" """
 
+import sys
 import warnings
+
 warnings.filterwarnings("ignore")
 
+from inference import get_predictor
 
-# Find the root directory of the project automatically
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Load model + vectorizer using absolute paths
-model = joblib.load(os.path.join(BASE_DIR, "models", "mood_model.pkl"))
-vectorizer = joblib.load(os.path.join(BASE_DIR, "models", "vectorizer.pkl"))
+def main():
+    text = " ".join(sys.argv[1:]).strip()
+    if not text:
+        print('Usage: python src/predict.py "text to analyze"')
+        sys.exit(1)
 
-# Read input text
-text = " ".join(sys.argv[1:])
-vec = vectorizer.transform([text])
+    predictor = get_predictor()
+    mood = predictor.predict(text)
+    print(f"Detected Mood: {mood}  (model: {predictor.backend})")
 
-# Predict mood
-prediction = model.predict(vec)[0]
 
-print("Detected Mood:", prediction)
+if __name__ == "__main__":
+    main()

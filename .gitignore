@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Training / runtime artifacts
+models/_hf_checkpoints/
+*.log
+
+# Fine-tuned transformer model (255 MB+, exceeds GitHub limits).
+# Regenerate locally with: python src/train_transformer.py
+models/transformer/
+
+# Local tooling / editor
+.claude/
+.DS_Store
+Thumbs.db
